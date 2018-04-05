@@ -13,10 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       restaurants: [],
-      place: 'gas lamp',
-      lat: 32.7157,
-      lng: -117.1611,
-      zoom: 10
+      place: 'gas lamp'
     }
     this.updateStateValues = this.updateStateValues.bind(this);
     this.search = this.search.bind(this);
@@ -34,7 +31,7 @@ class App extends Component {
     //https://developers.zomato.com/api/v2.1/search?q=san%20diego&apikey=320b6c6d8f00afe358d35021470454a1
 
     const url = 'https://developers.zomato.com/api/v2.1/search';
-    const apikey = 'APIKEY'
+    const apikey = ''
 
     axios
       .get(url, {
@@ -57,8 +54,9 @@ class App extends Component {
           <div>
             <div>
               <div>
-                <input value={this.state.place} onChange={this.updateStateValues} />
-                <button onClick={this.search}>Submit</button>
+                <p>Enter and location or zipcode:
+                <input className='col-md-4' value={this.state.place} onChange={this.updateStateValues} />
+                <button onClick={this.search}>Submit</button> </p>
               </div>
             </div>
             <div className='row'>
@@ -71,9 +69,6 @@ class App extends Component {
                         <RestInfo
                           key={restaurant.restaurant.id}
                           restaurant={restaurant.restaurant}
-                          lat={this.state.lat}
-                          lng={this.state.lng}
-                          zoom={this.state.zoom}
                         />
                       ))
                     }
@@ -82,9 +77,6 @@ class App extends Component {
               </div>
               <div className='col'>
                 <Map restaurants={this.state.restaurants}
-                  lat={this.state.lat}
-                  lng={this.state.lng}
-                  zoom={this.state.zoom}
                 />
               </div>
             </div>

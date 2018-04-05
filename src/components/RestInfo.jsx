@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export default ({ restaurant }) => {
-
   if (!restaurant) {
     return null
   }
