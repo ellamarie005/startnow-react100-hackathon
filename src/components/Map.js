@@ -7,7 +7,7 @@ export class MapContainer extends React.Component {
     this.state = {
       lat: 32.7157,
       lng: -117.1611,
-      zoom: 10.5
+      zoom: 11
     }
     this.componentDidMount = this.componentDidMount.bind(this);
   }
@@ -28,14 +28,16 @@ export class MapContainer extends React.Component {
     //saying you want the map to occupy all of the space of the parent
     return (
       <div>
-        <Map google={this.props.google} zoom={this.state.zoom}
+        <Map google={this.props.google}
           style={{ width: 500, height: 500, background: 'blue' }}
-          center={{ lat: this.state.lat, lng: this.state.lng }}
-          >
+          initialCenter={{ lat: this.state.lat, lng: this.state.lng }}
+          ref='map'
+        >
 
           <Marker
             position={{ lat: this.state.lat, lng: this.state.lng }}
-            title="You are here!" />
+            title="You are here!"  
+          />
           {
             this.props.restaurants.map((restaurant) => (
               //console.log(restaurant.restaurant.location.latitude, restaurant.restaurant.location.longitude)
@@ -53,5 +55,5 @@ export class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ('')
+  apiKey: ('AIzaSyAuIQ4ntNPCHbg2HT7QaqIRu7d8QIHpLbY')
 })(MapContainer)
