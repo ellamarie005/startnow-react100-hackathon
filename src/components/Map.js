@@ -13,7 +13,7 @@ export class MapContainer extends React.Component {
   }
 
   componentDidMount() {
-    //https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAuIQ4ntNPCHbg2HT7QaqIRu7d8QIHpLbY
+    //https://www.googleapis.com/geolocation/v1/geolocate?key=APIKEYHERE
     if (navigator.geolocation)
       navigator.geolocation.getCurrentPosition((position) => {
         this.setState({
