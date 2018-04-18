@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   search() {
-    //https://developers.zomato.com/api/v2.1/search?q=san%20diego&apikey=PUTAPIHERE
+    //https://developers.zomato.com/api/v2.1/search?q=san%20diego&apikey=PUTAPIKEYHERE
 
     const url = 'https://developers.zomato.com/api/v2.1/search';
     const apikey = ''
