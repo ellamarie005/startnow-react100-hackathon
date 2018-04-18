@@ -28,10 +28,10 @@ class App extends Component {
   }
 
   search() {
-    //https://developers.zomato.com/api/v2.1/search?q=san%20diego&apikey=320b6c6d8f00afe358d35021470454a1
+    //https://developers.zomato.com/api/v2.1/search?q=san%20diego&apikey=PUTAPIHERE
 
     const url = 'https://developers.zomato.com/api/v2.1/search';
-    const apikey = '320b6c6d8f00afe358d35021470454a1'
+    const apikey = ''
 
     axios
       .get(url, {
